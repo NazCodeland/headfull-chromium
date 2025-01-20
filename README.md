@@ -2,6 +2,10 @@
 
 Package dependencies to run chromium in headfull mode with Playwright.
 
+## Acknowledgments
+
+This project is based on the original [headfull-chromium project](https://github.com/piercefreeman/docker/tree/main/headfull-chromium) by Pierce Freeman. See [CHANGES.md](CHANGES.md) for a detailed list of modifications.
+
 Key environment variables:
 
 - `APP_PATH`: Working directory for the docker container that houses your node.js executable
@@ -13,6 +17,7 @@ Key environment variables:
 This deployment could be used in remote control mode, like with [CDPSessions](https://playwright.dev/docs/api/class-browsertype#browser-type-launch-server). However more commonly I've used it by bundling playwright and the browser runtime side-by-side. This has some advantages for chatty connections or frequent connections since it decreases network bandwidth latency.
 
 The recommended execution pattern is therefore to build your npm project and leverage the image's entrypoint.sh file for bootup. We recommend:
+
 - Create a npm project that houses your browser control code
 - Build a custom dockerfile that inherits from this base, setting the $APP_PATH env variable to wherever your root npm project is copied over
 - Export the $NODE_EXEC environment variable to however you want to launch your node application
@@ -28,11 +33,13 @@ Launching in docker runs within the host namespace by default. For additional se
 Incorporating this security preference will depend on your method of launching this docker image.
 
 docker CLI:
+
 ```
 docker run -it --rm --ipc=host --user pwuser --security-opt seccomp=seccomp_profile.json {image} /bin/bash
 ```
 
 docker-compose.yml:
+
 ```
 version: '3.9'
 services:

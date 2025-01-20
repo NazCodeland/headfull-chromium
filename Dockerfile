@@ -1,7 +1,7 @@
 FROM ubuntu:22.04
 
 ARG DEBIAN_FRONTEND=noninteractive
-ARG TZ=America/Los_Angeles
+ARG TZ=America/Toronto
 
 ARG PLAYWRIGHT_VERSION
 
