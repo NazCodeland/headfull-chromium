@@ -9,7 +9,7 @@ This project is a Python/Poetry adaptation of the original [headfull-chromium pr
 Key environment variables:
 
 - `APP_PATH`: Working directory for the docker container that houses your Python executable
-- `NODE_EXEC`: The bash command to execute in order to run your control code. Examples include `python main.py` or `poetry run python src/main.py`.
+- `PYTHON_EXEC`: The bash command to execute in order to run your control code. Examples include `python main.py` or `poetry run python src/main.py`.
 - `VNC_PASSWORD`: Default password for the VNC server that controls the headfull browser.
 
 ## Client Code
@@ -24,7 +24,7 @@ The recommended execution pattern is therefore to build your Python project and 
   FROM nazcodeland/headfull-chromium-poetry:latest
   ```
 - Set the `APP_PATH` env variable to wherever your root Python project is copied over
-- Export the `NODE_EXEC` environment variable to however you want to launch your Python application
+- Export the `PYTHON_EXEC` environment variable to however you want to launch your Python application
 
 ## Running
 
