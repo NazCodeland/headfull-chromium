@@ -27,3 +27,9 @@ This repository is based on the [headfull-chromium project](https://github.com/p
 - Updated README.md:
   - Added acknowledgment section with link to original repository
 - Added CHANGES.md to track modifications from original project
+
+## Documentation Updates
+- Updated README.md to reflect Python/Poetry focus and remove Node.js specific content
+- Added Docker Hub image information and usage instructions
+- Updated examples to use Python instead of Node.js
+- Added more detailed Docker Compose examples
