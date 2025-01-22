@@ -8,6 +8,16 @@ This repository is based on the [headfull-chromium project](https://github.com/p
 
 ## Modifications
 
+### January 22, 2025
+
+- Major refactor to create Python-specific base image:
+  - Removed Node.js specific components (Node16, npm, yarn)
+  - Added Python 3.11 with Poetry package manager
+  - Maintained all Playwright and VNC infrastructure
+  - Kept essential tools (git, ssh) for development
+  - Optimized layer caching and cleanup
+  - Reduced image size by removing unnecessary dependencies
+
 ### January 20, 2025
 
 - Initial fork created
